@@ -19,8 +19,7 @@ C   tiempo con condiciones de Dirichlet P=0 en toda la frontera.
 
 //-----Para compilar omp se usa nvcc -arch=sm_20 -Xcompiler -fopenmp -Igomp -o ejecutable.out programa.cu
 
-//#include <stdio.h>
-//--------------
+#include <stdio.h>
 #include <stdlib.h>
 //#include <conio.h>
 //---para conio.h se puede usar #include <curses.h> o <ncurses.h> pero se necesita descargar la libreria
@@ -227,7 +226,7 @@ C----------------------------------------------------------------------*/
 //Esto le da informacion adicional al compilador para que comparta los datos listados entre todos los hilos
 #pragma omp parallel shared(Nzz,Nxx,vel) private(i,j)
 	{
-#pragma omp for schedule(dynamic,20) nowait
+#pragma omp for schedule(dynamic,CHUNK) nowait
 		for(i=0;i<=Nzz;i++){
 			for(j=0;j<Nxx;j++){
 				vel[i][j]=0.0;
