@@ -20,6 +20,7 @@ C   tiempo con condiciones de Dirichlet P=0 en toda la frontera.
 //-----Para compilar omp se usa nvcc -arch=sm_20 -Xcompiler -fopenmp -Igomp -o ejecutable.out programa.cu
 
 //#include <stdio.h>
+//--------------
 #include <stdlib.h>
 //#include <conio.h>
 //---para conio.h se puede usar #include <curses.h> o <ncurses.h> pero se necesita descargar la libreria
