@@ -222,7 +222,7 @@ C----------------------------------------------------------------------*/
 	/*Inicializar Vel*/
 
 	int i,j;
-	//int CHUNK=20;//Nzz=Nz+Na=401+25
+	int CHUNK=20;//Nzz=Nz+Na=401+25
 //Esto le da informacion adicional al compilador para que comparta los datos listados entre todos los hilos
 #pragma omp parallel shared(Nzz,Nxx,vel) private(i,j)
 	{
